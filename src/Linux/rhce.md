@@ -1,4 +1,4 @@
-#  公司的rhce培训
+#  准备公司的rhce培训
 ## Yum常用命令
 * yum list all 列出仓库中所有软件包
 * yum info 查看软件包信息
