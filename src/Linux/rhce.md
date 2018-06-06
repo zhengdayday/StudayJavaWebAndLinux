@@ -277,5 +277,7 @@
               # For example 
               pwd
               ls
-            
-            ``` 
+     ``` 
+     * 运行方法
+        * bash/zsh xxx.sh
+        * ./xxx.sh
