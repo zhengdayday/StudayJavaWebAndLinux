@@ -267,4 +267,13 @@
     * DNS地址 DNS1=
     * 然后使用ping命令检查是否ping通
 * 配置Yum软件仓库
-    *   
+    *  进入到/etc/yum.repos.d目录中
+* 编写shell脚本
+    * #! 系统使用那种Shell解释器
+    * # 注释 
+    * 用法 ```jshelllanguage
+              #！ /bin/zsh
+              # For example 
+              pwd
+              ls
+            ``` 
