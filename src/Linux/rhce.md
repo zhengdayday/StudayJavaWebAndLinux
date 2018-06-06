@@ -271,7 +271,8 @@
 * 编写shell脚本
     * #! 系统使用那种Shell解释器
     * # 注释 
-    * 用法 ```jshelllanguage
+    * 用法  
+    ```jshelllanguage
               #！ /bin/zsh
               # For example 
               pwd
