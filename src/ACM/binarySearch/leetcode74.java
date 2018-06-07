@@ -1,17 +1,10 @@
-package ACM.binarySearch;
+package  ACM.binarySearch;
 
 import java.util.Scanner;
 
 public class leetcode74 {
 
     public static boolean searchMatrix(int[][] matrix, int target) {
-
-        // 1 2 3 4
-        // 5 6 7 8
-        // 9 10 11 12
-        // int n = (len-1)/列数
-        // int m = (len-1)%行数
-        //总长度
         if(matrix.length == 0 || matrix[0].length == 0) {
             return false;
         }

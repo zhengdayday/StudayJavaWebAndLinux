@@ -1,6 +1,5 @@
-package ACM.tanxin;
+package ACM.Greedy;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Scanner;
 

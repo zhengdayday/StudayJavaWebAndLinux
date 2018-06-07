@@ -1,4 +1,4 @@
-package ACM.moni;
+package ACM.simulated;
 
 import java.util.HashMap;
 import java.util.Scanner;

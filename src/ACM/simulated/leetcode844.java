@@ -1,4 +1,4 @@
-package ACM.moni;
+package ACM.simulated;
 
 import java.util.Scanner;
 import java.util.Stack;
