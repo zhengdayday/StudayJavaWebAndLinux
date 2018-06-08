@@ -51,7 +51,7 @@
     * echo $SHELL Terminal print /bin/bash
 * data命令用于显示及设置系统的时间或日期
     * date print Tue Jun  5 10:10:49 CST 2018
-    * date "+%Y-$m-$d %H:$M:%S" print date "+%Y-%m-%d %H:%M:%S"
+    * date "+%Y-%m-%d %H:%M:%S" print date "+%Y-%m-%d %H:%M:%S"
     * date -s "20170901 8:30:00" 设置当前时间
     * date "+%j" 显示今天是第几天
 * reboot命令重启系统 需要管理员权限
