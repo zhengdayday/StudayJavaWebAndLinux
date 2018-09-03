@@ -3,6 +3,8 @@ package Java;
 import java.io.*;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 
 public class JavaIo {
@@ -136,5 +138,6 @@ public class JavaIo {
     }
     public static void main(String[] args) {
         urlUse();
+        List<String> list = new CopyOnWriteArrayList<>();
     }
 }
