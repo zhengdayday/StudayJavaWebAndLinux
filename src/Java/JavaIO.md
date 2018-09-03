@@ -104,6 +104,18 @@ public static void listAllFiles(File dir) {
 * transient关键字可以使一些属性不会被序列化
 
 ## 网络操作
-* 
-
+* Java中的网络支持:
+    * InetAddress: 用于表示网络上的硬件资源，即IP地址
+    * URL: 统一资源定位符
+    * Sockets: 使用TCP协议实现网络通信
+    * Datagram: 使用UDP协议实现网络通信
+### InetAddress
+* 没有公有的构造函数，只能通过静态方法来创建实例
+```java
+InetAddress.getByName(String host);
+InetAddress.getByAddress(byte[] address);
+```
+### URL
+* 可以直接从URL中读取字节流数据
+ 
 

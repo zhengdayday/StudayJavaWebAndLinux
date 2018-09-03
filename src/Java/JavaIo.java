@@ -1,6 +1,8 @@
 package Java;
 
 import java.io.*;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 
 public class JavaIo {
@@ -88,6 +90,7 @@ public class JavaIo {
         }
     }
 
+    // 序列化反序列化
     public static void xuliehua() {
         A a1 = new A(123, "abc");
         String objectFile = "file/a1";
@@ -105,7 +108,33 @@ public class JavaIo {
             e.printStackTrace();
         }
     }
+
+    public static void urlUse() {
+        try {
+            URL url = new URL("http://www.baidu.com");
+
+            /* 字节流 */
+            InputStream is = url.openStream();
+            /* 字符流 */
+            InputStreamReader isr = new InputStreamReader(is, "utf-8");
+
+            /*  提供缓存功能 */
+            BufferedReader br = new BufferedReader(isr);
+
+            String line;
+            while( (line = br.readLine()) != null) {
+                System.out.println(line);
+            }
+            br.close();
+
+
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
     public static void main(String[] args) {
-        StringMethod();
+        urlUse();
     }
 }
