@@ -1,5 +1,4 @@
 * 不会的java知识 
-* 
 * 包装类型
     * new Integer(123) 与 Interget(123)的区别在于
         * new Integer(123) 每次都是新建一个对象
@@ -47,4 +46,67 @@
     * 隐式类型转换
         * 因为1是int类型，它比short类型精度要高，因此不能隐式int类型向下转型为short类型
                         
-                              
+* 接口
+    * 接口从java8开始，接口也可以拥有默认的方法实现。
+    * 接口的成员（方法+字段）默认都是public的，并且不允许定义为private或者protected
+    * 接口的字段默认都是static 和 final的
+    * 从设计层面上看，抽象类提供了一种 IS-A 关系，那么就必须满足里式替换原则，即子类对象必须能够替换掉所有父类对象。而接口更像是一种 LIKE-A 关系，它只是提供一种方法实现契约，并不要求接口和实现接口的类具有 IS-A 关系。  
+    * 从使用上来看，一个类可以实现多个接口，但是不能继承多个抽象类
+    * 接口的字段只能是static 和 final类型的，而抽象类没有这种限制
+    * 接口的成员只能是public的，而抽象类的成员可以有多种访问权限
+    * 使用接口：
+        * 需要让不相关的类都实现一个方法，例如不相关的类都可以实现 Compareable 接口中的 compareTo() 方法；
+        * 需要使用多重继承。
+    * 使用抽象类：
+        * 需要在几个相关的类中共享代码。
+        * 需要能控制继承来的成员的访问权限，而不是都为 public。
+        * 需要继承非静态和非常量字段。
+    * super 
+        * 访问父类的构造函数: 可以使用super()函数访问父类的构造函数，从而委托父类完成一些初始化工作
+        * 访问父类的成员: 如果子类重写了父类的某个方法的实现，可以通过使用super关键字来引用父类的方法实现
+    * 重写
+        * 子类方法访问权限必须大于等于父类方法
+        * 子类方法的返回类型必须是父类方法返回类型或为其子类型
+    * 重载
+        * 存在于同一个类中，指一个方法与已经存在的方法名称上相同，但是参数类型、个数、顺序至少有一个不同。应该注意的是，返回值不同，其它都相同不算是重载        
+* clone
+    * 如果一个类没有实现 Cloneable 接口又调用了 clone() 方法，就会抛出 CloneNotSupportedException。  
+    * 浅拷贝
+        * 拷贝对象和原始对象的引用类型引用同一个对象
+    * 深拷贝
+        * 拷贝对象和原始对象的引用类型引用不同对象
+    * 反射
+        * Class 和 java.lang.reflet 一起对反射提供了支持， java.lang.reflect类库主要包含以下三个类:
+            * File: 可以使用get()和set()方法读取Field对象关联的方法;
+            * Method: 可以使用invoke()方法调用与Method对象关联的方法;     
+            * Constructor: 可以用Constructor创建新的对象
+        *  获取Class对象
+            * 使用Class类的forName静态方法
+            ```java
+                Class.forName(""); 
+            ```
+            * 直接获取某一个对象的Class
+            ```java
+               Class<?> klass = int.class;
+               Class<?> classInt = Integer.TYPE;
+            ```
+            * 调用某个对象的getClass(）
+           ```java
+              StringBuilder str = new StringBuilder("123");
+              Class<?> ss = str.getClass();
+           ``` 
+        * 判断是否为某个类的实例
+        ````java
+            public native boolean isInstance(Object obj);
+        ```` 
+        * 创建实例
+        ```java
+           //使用Class对象的newInstance()方法来创建对应类的实例
+           Class<?> c = String.class;
+           Object str = c.newInstance();
+           //使用Class对象获取指定的Constructor对象，再调用Constructor对象的newInstance方法来创建实例
+           Class<?> c = String.class;
+           Constructor = constructor = c.getConstructor(String.class);
+           System.out.println(obj);
+        ```
+        
