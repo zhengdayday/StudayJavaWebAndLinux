@@ -161,7 +161,33 @@ truncate table mytable;
         * 除了汇总字段外，select 语句中的每一字段都必须在group by子句中给出
         * null的行会单独分为自足
         * 大多数SQL实现不支持group by 列具有可变长度的数据类型
+    * 子查询
+        * 子查询中只能返回一个字段的数据
+        * 可以将子查询的结果作为where语句的过滤条件
+        ```mysql
+        select * from mytable where col1 in (select col2 from mytable2);
+        ```    
+* 连接
+    * 连接用于连接多个表，使用join关键字，并且条件语句使用on而不是where
+    * 内连接
+        * inner join
+       ```mysql
+       select A.value , B.value from tablea as A inner join tableb as B on A.key = B.key
+       ```   
+     * 自连接
+     ```mysql
+     select e1.name from employee as e1 inner join employee as e2 on e1.department = e2.department and e2.name = "jim";
+     ```  
+     * 自然连接
+     ```mysql
+     select A.value , B.valu from tablea as a natural join talbed as b;
+     ```
+     * 外连接
+        * 外连接保留了没有关联的那些行，分为左外连接，右外连接以及全外连接，左外连接就是保留左表没有关联的行。
         
+* 组合查询
+    * union 来组合两个擦汗寻
+    * 默认会去除相同行，如果需要保留相同行，使用union all 
         
     
 
